@@ -32,6 +32,9 @@ public class Project {
 	
     private LocalDateTime createdAt;
     
+    @Column(length = 1000)
+    private String localPath;
+    
     @PrePersist  //Executes before inserting a new record.
     
     public void onCreate() {
@@ -86,6 +89,14 @@ public class Project {
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
+    }
+    
+    public String getLocalPath() {
+        return localPath;
+    }
+
+    public void setLocalPath(String localPath) {
+        this.localPath = localPath;
     }
 }
 
